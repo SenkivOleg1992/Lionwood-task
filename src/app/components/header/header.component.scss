@@ -1,0 +1,33 @@
+
+.menu-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background-color: grey;
+    border: 2px solid goldenrod;
+    border-radius: 3px;
+    color: goldenrod;
+}
+
+.menu-button:hover{
+    background-color: goldenrod;
+    border: 2px solid grey;
+    border-radius: 3px;
+    color: grey;
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list li a{
+    color: rgb(82, 79, 79);
+    font-weight: bold;
+}
+
+.nav-link .active {
+    background-color: green;
+}

@@ -1,0 +1,75 @@
+<div class="catalog">
+    <div class="catalog__body">
+        <div class="catalog__title title">IT блог</div>
+        <div class="catalog__row">
+            <div class="catalog__column" *ngFor="let article of arrArticles">
+                <div class="item-about" [routerLink]="['/topics/' + article.topic.topicName, article.id ]">
+                    <div class="item-about__image">
+                        <img src="{{article?.image}}" alt="image-article" style="width: 70%; height: 200px">
+                    </div>
+                    <div class="item-about__text">
+                        <div class="item-about__article-title">
+                            {{article?.titleName}}
+                        </div>
+                        <div class="item-about__article-details">
+                            <p>
+                                {{article?.details}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item-about__button">
+                        <button class="goToDetails">Перейти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button type="button" class="btn new-article" (click)="openModal(template)">new</button>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left"></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="form-article">
+            <label for="articleTopic">Виберіть тему</label>
+            <select #nameTopic="ngModel" [(ngModel)]="articleTopic" name="articleTopic" class="custom-select"
+                id="inputGroupSelect01" required>
+                <option *ngFor="let category of topicsCategory" [ngValue]="category" [selected]="category">
+                    {{category.topicName}}</option>
+            </select>
+
+            <div class="custom-file">
+                <!-- <input  (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label> -->
+                <label for="articleImage">Введіть url картинки</label>
+                <input #image="ngModel" [(ngModel)]="articleImage" name="articleImage" type="text" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="articleTitle">Тема статті</label>
+                <input #title="ngModel" [(ngModel)]="articleTitle" name="articleTitle" type="text" class="form-control"
+                    placeholder="введіть загаловок статті" required>
+            </div>
+            <div class="form-group">
+                <label for="articleDetails">Коротка про статтю</label>
+                <textarea #details="ngModel" [(ngModel)]="articleDetails" name="articlDetails" id="" cols="10" rows="5"
+                    class="form-control" placeholder="введіть коротко про статтю...." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="articleMoreDetails">Детальніше про статтю</label>
+                <textarea #moreDetails="ngModel" [(ngModel)]="articleMoreDetails" name="articleMoreDetails" id=""
+                    cols="10" rows="5" class="form-control" placeholder="інформація про статтю" required></textarea>
+            </div>
+            <button (click)="addArticle()" class="btn save-article"
+                [disabled]="nameTopic.invalid || image.invalid  || title.invalid || details.invalid || moreDetails.invalid"
+                (click)="modalRef.hide()">Зберегти</button>
+        </form>
+    </div>
+</ng-template>

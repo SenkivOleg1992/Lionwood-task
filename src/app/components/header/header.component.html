@@ -1,0 +1,31 @@
+
+
+
+<header>
+  <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ul class="nav nav-pills menu-list">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['topics/start']" routerLinkActive="active">Start</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['topics/rating']" routerLinkActive="active">Rating</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['topics/webDevelopment']" routerLinkActive="active">Web-Development</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['topics/python']" routerLinkActive="active">Python</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['topics/java']" routerLinkActive="active">Java</a>
+      </li>
+    </ul>
+  </mat-menu>
+</header>
+

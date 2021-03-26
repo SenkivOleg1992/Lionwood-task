@@ -1,0 +1,27 @@
+<div class="catalog">
+    <div class="catalog__body">
+        <div class="catalog__title title">{{articleTitle | titlecase }}</div>
+        <div class="catalog__row">
+            <div class="catalog__column" *ngFor="let article of arrArt">
+                <div class="item-about" [routerLink]="['/topics/' + article.topic.topicName, article.id ]">
+                    <div class="item-about__image">
+                        <img src="{{article?.image}}" alt="image-article" style="width: 70%; height: 200px">
+                    </div>
+                    <div class="item-about__text">
+                        <div  class="item-about__article-title">
+                            {{article?.titleName}}
+                        </div>
+                        <div class="item-about__article-details">
+                            <p>
+                                {{article?.details}}
+                            </p>
+                        </div> 
+                    </div>
+                    <div class="item-about__button">
+                        <button class="goToDetails">Перейти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

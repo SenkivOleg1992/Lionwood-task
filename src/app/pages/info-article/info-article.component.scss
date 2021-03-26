@@ -1,0 +1,46 @@
+.article{
+    font-family: 'Muli';
+    width: 90%;
+    min-height: 90vh;
+    margin: 30px auto;
+    border: 2px solid gold;
+    border-radius: 5px;
+}
+
+.article__about{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.article__about__header{
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 100px;
+    border: 1px solid gold;
+    color: goldenrod;
+    font-size: calc(15px + 15 * (100vw / 1200));
+}
+
+// .title{
+
+// }
+// .article__about__text{
+
+// }
+
+
+.go-back {
+    position: fixed;
+    top: 93%;
+    left: 95%;
+    border: 2px solid gold;
+    color: gold;
+    background-color: gray;
+}

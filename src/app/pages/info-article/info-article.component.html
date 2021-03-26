@@ -1,0 +1,13 @@
+
+<button (click)="goBack()" class="btn go-back">назад</button>
+
+<div class="article">
+    <div class="article__about">
+        <div class="article__about__header" [style.backgroundImage]="'url('+ view?.image +')'" style="background-size: cover;">
+            <h2 class="title">{{view?.titleName}}</h2>
+        </div>
+        <div class="article__about__text" >
+            <p>{{view?.moreDetails}}</p>
+        </div>
+    </div>
+</div>
